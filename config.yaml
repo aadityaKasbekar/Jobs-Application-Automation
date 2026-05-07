@@ -1,0 +1,42 @@
+processing:
+  batch_size: 10
+  delay_between_rows_sec: 1
+  delay_between_batches_sec: 5
+
+llm:
+  default_models:
+    claude: "claude-sonnet-4-6"
+    openai: "gpt-4o"
+    gemini: "gemini-1.5-pro"
+  max_tokens: 4096
+  json_retry_attempts: 2
+
+resume:
+  pdf_path: "data/resume/resume.pdf"
+  cache_path: "data/resume_cache.json"
+
+csv:
+  # Column used as unique row identifier for checkpointing
+  id_column: "icimsJobId"
+
+  # Maps canonical field names (used internally) → actual CSV column names
+  # Update this block when switching to a CSV with different column names
+  column_mapping:
+    job_id: "icimsJobId"
+    title: "title"
+    company: "companyName"
+    location: "normalizedLocation"
+    job_level: "jobLevel"
+    department: "department"
+    hiring_manager_name: "hm_name"
+    hiring_manager_email: "hm_email"
+    recruiter_name: "recruiter_name"
+    recruiter_email: "recruiter_email"
+
+  # These columns are concatenated in order to form job_description_full
+  # Adjust list/order for different CSV schemas
+  description_columns:
+    - "shortDescription"
+    - "basicQualifications"
+    - "preferredQualifications"
+    - "description"
