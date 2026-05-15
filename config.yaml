@@ -6,7 +6,7 @@ processing:
 llm:
   default_models:
     claude: "claude-sonnet-4-6"
-    openai: "gpt-4o"
+    openai: "gpt-5.1"
     gemini: "gemini-1.5-pro"
   max_tokens: 4096
   json_retry_attempts: 2

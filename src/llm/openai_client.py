@@ -11,7 +11,7 @@ class OpenAIClient(LLMClient):
     def _call(self, system: str, user: str) -> str:
         response = self.client.chat.completions.create(
             model=self.model,
-            max_tokens=self.max_tokens,
+            max_completion_tokens=self.max_tokens,
             messages=[
                 {"role": "system", "content": system},
                 {"role": "user", "content": user},
