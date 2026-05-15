@@ -30,3 +30,11 @@ llm_input_*.csv
 
 # macOS
 .DS_Store
+
+# Logs
+*.log
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+htmlcov/
